@@ -1,0 +1,12 @@
+.env
+
+*.log
+
+faturas/
+
+__pycache__/
+*.pyc
+*.pyo
+
+venv/
+.venv/
