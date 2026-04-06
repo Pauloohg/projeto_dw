@@ -10,19 +10,26 @@ Projeto de Data Warehouse e Business Intelligence sobre faturas de cartão de cr
 
 ```
 projeto_dw/
-├── faturas/                        # CSVs das faturas
+├── faturas/                        # CSVs das faturas (não versionado)
 │   ├── Fatura_2025-03-20.csv
 │   ├── Fatura_2025-04-20.csv
 │   │   ...
 │   └── Fatura_2026-02-20.csv
 ├── docs/
-│   └── Fase1_Modelagem_DW.docx     # Documento de modelagem e dicionário de dados
+│   ├── imagens/                    # Prints do dashboard
+│   │   ├── visao_geral.png
+│   │   ├── categorias_estabelecimentos.png
+│   │   ├── analise_temporal.png
+│   │   └── star_schema.png
+│   ├── Fase1_Modelagem.md          # Modelagem do DW e dicionário de dados
+│   └── Explicação_Dashboard.md                # Documentação do dashboard
 ├── sql/
-│   └── consultas.sql               # Consultas SQL das perguntas de negócio (Fase 3)
-├── etl.py                          # Pipeline ETL completo (Extract → Transform → Load)
+│   └── consultas.sql               # Consultas SQL das perguntas de negócio
+├── etl.py                          # Pipeline ETL (Extract → Transform → Load)
+├── Dashboard Cartão.pbix           # Dashboard Power BI
 ├── requirements.txt                # Bibliotecas Python necessárias
-├── .env                            # Credenciais do banco
-├── .gitignore                      # Arquivos ignorados pelo Git
+├── .env                            # Credenciais do banco (não versionado)
+├── .gitignore
 └── README.md
 ```
 
@@ -32,6 +39,7 @@ projeto_dw/
 
 - Python 3.10+
 - PostgreSQL 14+
+- Power BI Desktop (para visualizar o dashboard)
 
 ---
 
@@ -86,6 +94,10 @@ O ETL irá:
 
 Abra o arquivo `sql/consultas.sql` no pgAdmin e execute as consultas.
 
+### 7. Abrir o dashboard
+
+Abra o arquivo `Dashboard Cartão.pbix` no Power BI Desktop. O dashboard já está configurado para conectar no banco `dw_cartao` em `localhost`.
+
 ---
 
 ## Modelo de Dados (Star Schema)
@@ -108,7 +120,7 @@ DIM_DATA -- FATO_TRANSACAO -- DIM_CATEGORIA
 
 ---
 
-## Perguntas de Negócio Respondidas (Fase 3)
+## Perguntas de Negócio Respondidas
 
 1. Gasto total por titular no período e por mês
 2. Top 10 categorias por valor
@@ -121,3 +133,13 @@ DIM_DATA -- FATO_TRANSACAO -- DIM_CATEGORIA
 9. Transações em moeda estrangeira (USD)
 
 ---
+
+## Dashboard
+
+O dashboard foi desenvolvido no Power BI Desktop e está organizado em 3 páginas:
+
+- **Visão Geral** — KPIs principais e evolução mensal dos gastos
+- **Categorias e Estabelecimentos** — top 10 categorias, top 10 estabelecimentos e distribuição à vista vs parcelado
+- **Análise Temporal** — transações por dia da semana, evolução por titular e tabela de compras em USD
+
+Veja a documentação completa em [docs/dashboard.md](docs/dashboard.md).
