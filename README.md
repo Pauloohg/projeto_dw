@@ -22,7 +22,7 @@ projeto_dw/
 │   │   ├── analise_temporal.png
 │   │   └── star_schema.png
 │   ├── Fase1_Modelagem.md          # Modelagem do DW e dicionário de dados
-│   └── Explicação_Dashboard.md                # Documentação do dashboard
+│   └── Doc_dashboard.md            # Documentação do dashboard
 ├── sql/
 │   └── consultas.sql               # Consultas SQL das perguntas de negócio
 ├── etl.py                          # Pipeline ETL (Extract → Transform → Load)
@@ -142,4 +142,4 @@ O dashboard foi desenvolvido no Power BI Desktop e está organizado em 3 página
 - **Categorias e Estabelecimentos** — top 10 categorias, top 10 estabelecimentos e distribuição à vista vs parcelado
 - **Análise Temporal** — transações por dia da semana, evolução por titular e tabela de compras em USD
 
-Veja a documentação completa em [docs/dashboard.md](docs/dashboard.md).
+Veja a documentação completa em [docs/Doc_dashboard.md](docs/Doc_dashboard.md).
